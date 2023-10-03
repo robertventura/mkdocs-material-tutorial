@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+<!-- Determine base classes -->
+{% set class = "site-brand" %}
+{% if "navigation.tabs.sticky" in features %}
+  {% set class = class ~ " site-brand--shadow site-brand--lifted" %}
+{% elif "navigation.tabs" not in features %}
+  {% set class = class ~ " site-brand--shadow" %}
+{% endif %}
+
+{% block header %}
+    <div class="site-branding {{ class }}">
+        <div class="site-title-group">
+        </div>
+    </div>
+    {{ super() }}  
+{% endblock %}
